@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300&family=Montserrat:wght@900&family=Titillium+Web&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="hero">
+      <h1>Find Your Film</h1>
+      <a> Your Watchlist</a>
+    </div>
+    <form id="movie-search">
+      <label for="movie-search" style="display: none">
+        Search for a movie
+      </label>
+      <input
+        id="movie-search"
+        name="movie-search"
+        type="text"
+        placeholder="Search for a movie"
+        required
+      />
+      <button type="submit">Search</button>
+    </form>
+    <main id="movies-list">
+      <div class="movies-item">
+        <img
+          class="grid-item movie-image"
+          src="https://www.omdbapi.com/src/poster.jpg"
+        />
+        <h3 class="grid-item movie-header">Movie Title</h3>
+        <div class="grid-item movie-subheader">
+          <p>x min</p>
+          <p>Category, Category, Category</p>
+          <button>Add to watchlist</button>
+        </div>
+        <p class="grid-item movie-summary">
+          Summary of the movie goes here from the API call.Summary of the movie
+          goes here from the API call. Summary of the movie goes here from the
+          API
+        </p>
+      </div>
+    </main>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
