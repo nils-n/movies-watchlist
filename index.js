@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const movieSearchBtn = document.getElementById("search-btn");
 const movieSearchForm = document.getElementById("movie-search-form");
 const moviesListEl = document.getElementById("movies-list");
