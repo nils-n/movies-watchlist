@@ -3,15 +3,14 @@
 *::before {
   box-sizing: border-box;
 }
-
 :root {
-  --main-ff: "Martel Sans", sans-serif;
-  --heading-ff: "Montserrat", sans-serif;
-  --subheading-ff: "Titillium Web", sans-serif;
+  --main-ff: "Inter", sans-serif;
+  --heading-ff: "Inter", sans-serif;
+  --subheading-ff: "Inter", sans-serif;
 
   --main-fw: 300;
-  --heading-fw: 900;
-  --subheading-fw: 400;
+  --heading-fw: 700;
+  --subheading-fw: 600;
 
   --primary-color: #c065e7;
   --secondary-color: #ff7591;
@@ -29,6 +28,7 @@ body {
 h1 {
   font-family: var(--heading-ff);
   font-weight: var(--heading-fw);
+  font-size: 3em;
 }
 
 h2,
@@ -53,11 +53,14 @@ div#hero {
   justify-content: space-between;
   align-items: center;
   padding: 0 5em;
-  min-height: 200px;
+  min-height: 210px;
   width: 100%;
   margin: auto auto;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("./assets/images/bg-img.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   background-size: cover;
   color: whitesmoke;
 }
@@ -77,12 +80,45 @@ a {
   font-weight: var(--main-fw);
 }
 
+a {
+  font-size: 2em;
+  font-weight: var(--subheading-fw);
+  font-family: var(--subheading-ff);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: red;
+  padding-left: 25px;
+  transform: translate(50px, 50px);
+  color: red;
+}
+
+.fontsearchbar {
+  width: 60%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.fontsearchbar i {
+  position: absolute;
+  left: 15px;
+  top: 20px;
+  color: gray;
+}
+
 input {
-  padding: 0.5em 2em;
+  padding: 16px 1em;
   border: 1px solid darkslategrey;
   border-right: none;
   border-radius: 10px 0 0 10px;
-  text-align: center;
+  text-align: left;
+  width: 100%;
+  padding-left: 4em;
+  font-size: 1.2em;
+  color: slategray;
 }
 
 a {
@@ -108,9 +144,11 @@ button {
 }
 form#movie-search-form {
   display: flex;
+  flex: 1 1 auto;
   justify-content: center;
   border-radius: 10px 0 0 10px;
-  padding: 2em;
+  /* padding: 1em 20em; */
+  transform: translate(0, -24px);
 }
 
 main {

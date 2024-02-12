@@ -1,33 +1,27 @@
 <html>
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300&family=Montserrat:wght@900&family=Titillium+Web&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  
+   
   </head>
   <body>
     <div id="hero">
-      <h1>Find Our Films</h1>
-      <a href="./watchlist.html"> Our Watchlist</a>
+      <h1>Find Your Film</h1>
+      <a href="./watchlist.html"> My Watchlist</a>
     </div>
     <form id="movie-search-form">
-      <label for="movie-input" style="display: none">
-        Search for a movie
-      </label>
-      <input
-        id="movie-input"
-        name="movie-input"
-        type="text"
-        placeholder="Search for a movie"
-        required
-      />
+      <div class="fontsearchbar"> 
+        <input
+          id="movie-input"
+          name="movie-input"
+          type="text"
+          required
+        />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
       <button id="search-btn" type="submit">Search</button>
     </form>
     <main id="movies-list"></main>
