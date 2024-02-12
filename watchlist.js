@@ -23,14 +23,14 @@ function loadMovies() {
                     />
                     <h3 class="grid-item movie-header">${movie.Title}</h3>
                     <div class="grid-item movie-subheader">
-                    <p>x min</p>
-                    <p>Category, Category, Category</p>
+                    <div>
+                      <p>${movie.Runtime}</p>
+                      <p>${movie.Genre}</p>
+                    </div>
                     <button class='btn watchlist-btn' data-movie-id=${movie.imdbID}>Remove</button>
                     </div>
                     <p class="grid-item movie-summary">
-                    Summary of the movie goes here from the API call.Summary of the movie
-                    goes here from the API call. Summary of the movie goes here from the
-                    API
+                    ${movie.Plot}
                     </p>
                 </div>
                 `;

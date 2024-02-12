@@ -157,13 +157,27 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 0 2em;
+  margin-top: 0;
+}
+
+img#no-data-initial {
+  height: 8em;
+  margin-top: 10em;
+}
+
+.hidden {
+  display: none;
+  height: 0;
+  margin-top: 0;
 }
 
 div.movies-item {
   display: grid;
+  width: 100%;
   max-height: 300px;
   max-width: 1200px;
-  gap: 0 0.5em;
+  /* min-height: 200px; */
+  gap: 0 1em;
   grid-template-areas:
     "image header "
     "image subheader "
@@ -171,7 +185,8 @@ div.movies-item {
   grid-template-columns: minmax(100px, 200px) 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   margin: 0.5em 0;
-  padding: 1em 0.5em;
+  padding: 0.5em 0 0.5em;
+  border-bottom: 1px solid rgb(197, 197, 197);
 }
 
 .movie-image {
@@ -199,7 +214,7 @@ div.movies-item {
   align-self: center;
   font-size: 1.1em;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: start;
   gap: 1em;
   color: #535353;
@@ -245,7 +260,7 @@ div.movies-item {
 
 .movie-summary {
   grid-area: summary;
-  justify-self: end;
+  justify-self: start;
   align-self: start;
   gap: 0.5em;
   color: #535353;
@@ -264,8 +279,12 @@ h2#watchlist-title {
   .movie-subheader {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-between;
     align-items: baseline;
     gap: 1em;
+  }
+
+  div.movies-item {
+    min-height: 400px;
   }
 }

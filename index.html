@@ -18,13 +18,18 @@
           id="movie-input"
           name="movie-input"
           type="text"
+          placeholder="Search for a movie"
           required
         />
         <i class="fa-solid fa-magnifying-glass"></i>
       </div>
       <button id="search-btn" type="submit">Search</button>
     </form>
-    <main id="movies-list"></main>
+    <main id="movies-list">
+      <div >
+        <img id="no-data-initial" src="./assets/images/no-data-initial.png" alt="">
+      </div>
+    </main>
     <script src=/index.js type="module"></script>
   </body>
 </html>
