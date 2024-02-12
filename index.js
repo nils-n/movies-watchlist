@@ -2,7 +2,7 @@ const movieSearchBtn = document.getElementById("search-btn");
 const movieSearchForm = document.getElementById("movie-search-form");
 const moviesListEl = document.getElementById("movies-list");
 
-let moviesWatchlist = JSON.parse(localStorage.getItem("movies-to-watch"));
+let moviesWatchlist = [];
 
 // search for movie by calling OMDb api
 movieSearchBtn.addEventListener("click", async (e) => {
@@ -50,6 +50,7 @@ function addEventListeners() {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       if (e.target.dataset.movieId) {
+        console.log(e.target.dataset.movieId);
         moviesWatchlist.push(e.target.dataset.movieId);
         localStorage.setItem(
           "movies-to-watch",
