@@ -1,10 +1,20 @@
-const searchBtn = document.getElementById("movie-search");
+const movieSearchBtn = document.getElementById("search-btn");
+const movieSearchForm = document.getElementById("movie-search-form");
 const moviesListEl = document.getElementById("movies-list");
 
-searchBtn.addEventListener("submit", async (e) => {
+let moviesWatchlist = JSON.parse(localStorage.getItem("movies-to-watch"));
+
+// search for movie by calling OMDb api
+movieSearchBtn.addEventListener("click", async (e) => {
   e.preventDefault();
+  const searchFormData = new FormData(movieSearchForm);
+  const movieKeywords = searchFormData
+    .get("movie-input")
+    .replace(" ", "+")
+    .replace(" ", "");
+
   const response = await fetch(
-    "http://www.omdbapi.com/?apikey=your-api-key&s=blade+runner"
+    `https://www.omdbapi.com/?apikey=4de60fd5&s=${movieKeywords}`
   );
   const data = await response.json();
   data.Search.forEach((movie) => {
@@ -18,7 +28,7 @@ searchBtn.addEventListener("submit", async (e) => {
             <div class="grid-item movie-subheader">
             <p>x min</p>
             <p>Category, Category, Category</p>
-            <button>Add to watchlist</button>
+            <button class='btn watchlist-btn' data-movie-id=${movie.imdbID}>Add to watchlist</button>
             </div>
             <p class="grid-item movie-summary">
             Summary of the movie goes here from the API call.Summary of the movie
@@ -28,5 +38,24 @@ searchBtn.addEventListener("submit", async (e) => {
         </div>
         `;
     moviesListEl.innerHTML += html;
+    addEventListeners();
   });
 });
+
+// update watchlist in localstorage
+function addEventListeners() {
+  let addToWatchlistBtnArray = document.getElementsByClassName("watchlist-btn");
+
+  for (let btn of addToWatchlistBtnArray) {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (e.target.dataset.movieId) {
+        moviesWatchlist.push(e.target.dataset.movieId);
+        localStorage.setItem(
+          "movies-to-watch",
+          JSON.stringify(moviesWatchlist)
+        );
+      }
+    });
+  }
+}

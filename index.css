@@ -12,6 +12,10 @@
   --main-fw: 300;
   --heading-fw: 900;
   --subheading-fw: 400;
+
+  --primary-color: #c065e7;
+  --secondary-color: #ff7591;
+  --tertiary-color: #ffce5b;
 }
 
 html,
@@ -50,9 +54,15 @@ div#hero {
   align-items: center;
   padding: 0 5em;
   min-height: 200px;
-  background-color: beige;
   width: 100%;
   margin: auto auto;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./assets/images/bg-img.png");
+  background-size: cover;
+  color: whitesmoke;
+}
+
+div#hero::before {
 }
 
 div#hero h1 {
@@ -61,30 +71,42 @@ div#hero h1 {
 
 form,
 input,
-button {
+button,
+a {
   font-family: var(--main-ff);
   font-weight: var(--main-fw);
 }
 
 input {
   padding: 0.5em 2em;
-  border: 2px solid darkslategrey;
+  border: 1px solid darkslategrey;
   border-right: none;
   border-radius: 10px 0 0 10px;
   text-align: center;
 }
 
+a {
+  color: whitesmoke;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
 form button {
   padding: 0.5em 1.5em;
-  border: 2px solid darkslategrey;
+  border: 1px solid darkslategrey;
   border-radius: 0 10px 10px 0;
-  background-color: beige;
+  background-color: rgb(235, 235, 235);
+  color: darkslategray;
 }
 
 button {
   cursor: pointer;
 }
-form#movie-search {
+form#movie-search-form {
   display: flex;
   justify-content: center;
   border-radius: 10px 0 0 10px;
@@ -92,7 +114,6 @@ form#movie-search {
 }
 
 main {
-  /* margin: 0 auto; */
   min-height: 300px;
   display: flex;
   flex-direction: column;
@@ -148,12 +169,35 @@ div.movies-item {
 }
 
 .movie-subheader button {
-  padding: 1em 1em;
+  padding: 0.5em 1em;
   border: none;
-  background-color: aquamarine;
+  background-image: linear-gradient(
+    to right,
+    var(--primary-color) 0%,
+    var(--secondary-color) 51%,
+    var(--tertiary-color) 100%
+  );
+  color: whitesmoke;
   border-radius: 10px;
   font-weight: bold;
   line-height: 1.5;
+  transition: 0.5s;
+}
+
+.btn {
+  margin: 0.8em;
+  padding: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 1.125em #eee;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-position: right center;
 }
 
 .movie-subheader:first-child {
@@ -169,6 +213,13 @@ div.movies-item {
   color: #535353;
   padding-top: 0.5em;
   line-height: 1.5;
+}
+
+h2#watchlist-title {
+  margin: 2em auto;
+  width: max-content;
+  font-family: var(--heading-ff);
+  font-weight: var(--heading-fw);
 }
 
 @media (min-width: 500px) {
